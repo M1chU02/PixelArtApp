@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel Art Creator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+        <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+        </label>
+        <em>Enable Dark Mode</em>
+    </div>
+
+      <h1>Pixel Art Creator</h1>
+
+      <!-- Color Picker and Controls -->
+      <div class="controls">
+        <div class="color-picker-container">
+            <label for="colorPicker">Choose Color:</label>
+            <input type="color" id="colorPicker" value="#000000" />
+            <span id="colorValue">#000000
+        </div>
+
+
+        <!-- Select for Grid Size -->
+        <select id="gridSize">
+          <option value="8">8 x 8</option>
+          <option value="16" selected>16 x 16</option>
+          <option value="24">24 x 24</option>
+          <option value="32">32 x 32</option>
+          <option value="64">64 x 64</option>
+        </select>
+
+        <button id="createGrid">Create Grid</button>
+        <button id="saveImage">Save Image</button>
+      </div>
+
+      <!-- Pixel Art Canvas -->
+      <div id="pixelCanvas"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

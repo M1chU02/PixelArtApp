@@ -1,0 +1,164 @@
+/* Theme Colors */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --control-bg: #f0f0f0;
+  --button-bg: #4caf50;
+  --button-color: white;
+}
+
+[data-theme="dark"] {
+  --bg-color: #333333;
+  --text-color: #ffffff;
+  --control-bg: #4a4a4a;
+  --button-bg: #66bb6a;
+  --button-color: #333333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--control-bg);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+#pixelCanvas {
+  display: grid;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+.pixel {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  background-color: white;
+  cursor: pointer;
+}
+
+#colorPicker,
+#gridSize,
+button {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+#colorPicker {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#colorPicker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+#colorPicker::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+.color-picker-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.color-picker-container label {
+  font-weight: bold;
+}
+
+#colorValue {
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#createGrid,
+#saveImage {
+  background-color: var(--button-bg);
+  color: var(--button-color);
+  cursor: pointer;
+}
